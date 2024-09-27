@@ -1,0 +1,52 @@
+
+@mixin col($size) {
+    flex: 0 0 calc(#{percentage($size / $grid-col)} - #{$grid-gap});
+    max-width: calc(#{percentage($size / $grid-col)} - #{$grid-gap});
+}
+
+@mixin media($breakpoint) {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@mixin bp($name) {
+    $width: map-get($grid-breakpoints, $name);
+    @include media($width) {
+        @content;
+    }
+}
+
+@mixin button($color) {
+    background-color: map-get($btn-colors, $color);
+    color: #fff;
+    border: 1px solid map-get($btn-colors, $color);
+    padding: 0.5rem 1rem;
+    font-size: map-get($btn-sizes, md);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        background-color: darken(map-get($btn-colors, $color), 10%);
+    }
+
+    &:active {
+        background-color: darken(map-get($btn-colors, $color), 15%);
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: lighten(map-get($btn-colors, $color), 20%);
+        pointer-events: none;
+    }
+}
+
+@mixin message($color) {
+    background-color: nth(map-get($message-colors, $color), 2);
+    color: nth(map-get($message-colors, $color), 1);
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}

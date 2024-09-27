@@ -1,0 +1,36 @@
+$container-max-width: 1140px;
+$grid-gap: 15px;
+$grid-gap-side: $grid-gap / 2;
+$grid-col: 12;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+) !default;
+
+$btn-colors: (
+    primary: #007bff,
+    secondary: #6c757d,
+    success: #28a745,
+    danger: #dc3545,
+    warning: #ffc107,
+    info: #17a2b8,
+    light: #f8f9fa,
+    dark: #343a40
+);
+
+$btn-sizes: (
+    sm: 0.875rem,
+    md: 1rem,
+    lg: 1.25rem
+);
+
+$message-colors: (
+    success: (#155724, #d4edda),
+    info: (#0c5460, #d1ecf1),
+    warning: (#856404, #fff3cd),
+    danger: (#721c24, #f8d7da)
+);
